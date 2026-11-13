@@ -1,0 +1,259 @@
+{
+ "frozen": "2026-10-26 (Sprint 7)",
+ "rule": "The primary is never replaced automatically; changing roles requires a new pre-registered decision and an edit of this file reviewed by the team.",
+ "environment": {
+  "python": "3.11.9",
+  "numpy": "2.4.6",
+  "pandas": "3.1.0",
+  "lock": "requirements-lock.txt"
+ },
+ "code_revision_note": "source_sha256 are LF-normalised hashes of the files the frozen pipeline runs, taken at freezing. The output checksum is the arbiter; drift in these hashes is reported, not fatal.",
+ "candidates": [
+  {
+   "id": "e110a_geometric_conservative_pes_smooth50",
+   "role": "fallback",
+   "config": "experiments/configs/e110a_geometric_conservative_pes_smooth50.json",
+   "config_sha256": "c59e1176e3028b4263b22fda73e0c98c17112ea4fcfa99e432f77e0210b25420",
+   "method": "geometric_smooth",
+   "expected_sha256": "8357049fb5fb1ad9b263cce92fbe4096563349df3d4959d4587dfadc32ae9698",
+   "assets": [
+    "atd_raw",
+    "atd_meta"
+   ],
+   "uses_trained_model": false,
+   "uses_smart_tagging": false,
+   "uses_video": false,
+   "frozen_runtime_s_cached_parse": 13.4,
+   "rationale": "Promoted in Sprint 6 under a pre-registered rule (C1-C4): +0.0113 spellF1 over e108 on the sealed SkillCorner test (13/13 non-tied positive), no material regression elsewhere."
+  },
+  {
+   "id": "e108_geometric_conservative_smooth50",
+   "role": "fallback",
+   "config": "experiments/configs/e108_geometric_conservative_smooth50.json",
+   "config_sha256": "90798a3c4686d9edcc2b01d1390355324416e3e85db50cc5a244421d11046bdb",
+   "method": "geometric_smooth",
+   "expected_sha256": "3591f172c6510270af3e4d570cd698b3e8db0bf4d5e5b1fe2768a8595d12e99b",
+   "assets": [
+    "atd_raw",
+    "atd_meta"
+   ],
+   "uses_trained_model": false,
+   "uses_smart_tagging": false,
+   "uses_video": false,
+   "frozen_runtime_s_cached_parse": 14.4,
+   "rationale": "Sprint 4 reference; confirmed on the sealed DFL holdout; frozen fallback."
+  },
+  {
+   "id": "e116_e110a_velocity",
+   "role": "experimental",
+   "config": "experiments/configs/e116_e110a_velocity.json",
+   "config_sha256": "b64d2e66e176c5e5319cc62c096c010d575423cd917a78fe4dbe75621cb52d6d",
+   "method": "geometric_s6",
+   "expected_sha256": "c81f572c1bb706a05b3f31cc556fe561412d714ffd9c071f098dccb866c815c3",
+   "assets": [
+    "atd_raw",
+    "atd_meta"
+   ],
+   "uses_trained_model": false,
+   "uses_smart_tagging": false,
+   "uses_video": false,
+   "frozen_runtime_s_cached_parse": 26.0,
+   "rationale": "e110a plus velocity gating (v2, away_gain 0). Positive on every provider but only on previously examined data; not promoted (docs/SPRINT7_RELEASE_READINESS.md)."
+  },
+  {
+   "id": "ens6_rescue80",
+   "role": "release_candidate",
+   "config": "experiments/configs/ens6_rescue80.json",
+   "config_sha256": "2ce0a5a9e82c34a1177e5f4505abe8362813caccb294d8da71f219593976277e",
+   "method": "learned_ens6",
+   "expected_sha256": "af29a2bd4489d9970e4cf25474bc4ac915dd5498a6cedce5dcd230cfe2db2b71",
+   "assets": [
+    "atd_raw",
+    "atd_meta"
+   ],
+   "uses_trained_model": true,
+   "uses_smart_tagging": false,
+   "uses_video": false,
+   "weights": "submission/models/ens6_rescue80 (six members, sha256 in the config; trained only on DFL open data, CC BY 4.0)",
+   "rationale": "Learned leader since Sprint 12. Beats e110a on all 51 external entries (Sprint 28 release readiness). Registered in Sprint 29 as a gated release candidate on the user's approval to prepare it as the primary submission; becoming the primary requires the team's sign-off (one role edit). e110a stays registered and verified as the fallback."
+  },
+  {
+   "id": "ens6_dead33",
+   "role": "release_candidate",
+   "config": "experiments/configs/ens6_dead33.json",
+   "config_sha256": "712f24bc70b2612af7c5cd917032e23d27d8b30dc163d498f588402ee8e703b0",
+   "method": "learned_ens6_dead33",
+   "expected_sha256": "aead8668f4681d4295b496b69421988b7f723af8628061fff9f9a428d5e458bc",
+   "assets": [
+    "atd_raw",
+    "atd_meta"
+   ],
+   "uses_trained_model": true,
+   "uses_smart_tagging": false,
+   "uses_video": false,
+   "weights": "submission/models/ens6_rescue80 (six members, unchanged) + submission/models/ens6_dead33/readout_all.npz (56 parameters; trained on DFL open data CC BY 4.0 and SkillCorner open data MIT; sha256 in the config)",
+   "rationale": "Sprint 33 PFF-free dead readout on ens6: passed the frozen Sprint 33 gate (SkillCorner test 14 +0.021 Spell F1, 14/14; SC dev +0.012; Metrica +0.002; DFL -0.002 within tolerance). Team lead reports it as the intended primary subject to final review; becoming the primary requires the individual consents in submission/APPROVALS.json. ens6_rescue80 and e110a stay registered and verified as fallbacks."
+  },
+  {
+   "id": "x_t1_50_dead37",
+   "role": "fallback",
+   "config": "experiments/configs/x_t1_50_dead37.json",
+   "config_sha256": "35ce4f7d8ff1fa85e9d6e92ac7d7fc90bfb6f3644400404b88a10334f60e11da",
+   "method": "learned_x_t1_50",
+   "expected_sha256": "d707e942b4a1a45c038e792b19e69e363373ba1132a3159539cd1c093edb74a1",
+   "assets": [
+    "atd_raw",
+    "atd_meta"
+   ],
+   "uses_trained_model": true,
+   "uses_smart_tagging": false,
+   "uses_video": false,
+   "weights": "submission/models/x_t1_50_dead37 (12 member files + readout; DFL CC BY 4.0, SkillCorner MIT; see ATTRIBUTION.md)",
+   "rationale": "Sprint 37 second look, exploratory: leading research candidate, not selected. Registered so the release path can reproduce it; roles of all other candidates are unchanged."
+  },
+  {
+   "id": "shared49_robust_L",
+   "role": "primary",
+   "config": "experiments/configs/shared49_robust_L.json",
+   "config_sha256": "5221580bad8d1ca2a4b82de47ba964aab5897895045c57633ffe2db428583dcc",
+   "method": "learned_shared49",
+   "expected_sha256": "7839169700c0cc0060dc6168ea5e414f486fbdfd615c025f379c519649529838",
+   "assets": [
+    "atd_raw",
+    "atd_meta"
+   ],
+   "uses_trained_model": true,
+   "uses_smart_tagging": false,
+   "uses_video": false,
+   "weights": "submission/models/x_t1_50_dead37 (13 unchanged S37 files) + submission/models/shared49_L (2 ownership students + 12 T2 specialist exports); 27 files in all, sha256 in the config; DFL CC BY 4.0, SkillCorner MIT notice; see ATTRIBUTION.md files",
+   "rationale": "Sprint 49 Study L, prepared for review and not selected: frozen-gate pass on development and on the exposed external matches, reproduced by an independent audit (audit commit 3ec649d). Exploratory evidence, not an independent confirmation. Roles of all other candidates are unchanged."
+  }
+ ],
+ "source_files": [
+  "games.py",
+  "culebs/__init__.py",
+  "culebs/atd.py",
+  "culebs/baselines.py",
+  "culebs/decode.py",
+  "culebs/diagnostics.py",
+  "culebs/events.py",
+  "culebs/features.py",
+  "culebs/models.py",
+  "culebs/stoppage.py",
+  "culebs/stoppage_pe.py",
+  "culebs/sprint6.py",
+  "evaluation/possession_metrics.py",
+  "evaluation/validate_submission.py",
+  "culebs/release.py",
+  "culebs/submission.py",
+  "scripts/make_submission.py",
+  "culebs/learned.py",
+  "culebs/dl/__init__.py",
+  "culebs/dl/decoders13.py",
+  "culebs/dl/features.py",
+  "culebs/dl/npinfer.py",
+  "culebs/dl/npinfer12.py",
+  "culebs/dead_readout33.py",
+  "culebs/rich49.py",
+  "culebs/radial49.py",
+  "culebs/joint49.py",
+  "culebs/composite49.py",
+  "culebs/dl/npinfer_joint49.py",
+  "culebs/dl/npinfer_radial49.py",
+  "culebs/dl/npinfer_rich49.py"
+ ],
+ "source_sha256": {
+  "games.py": "3b2122794e9e0476e2b3a871d14880e5fa47c4feaeacf99caef054c2309076ce",
+  "culebs/__init__.py": "c5d414e682196f17981667f05aaf3a676eb6521051a65fdc47c2d0d1d3f567ce",
+  "culebs/atd.py": "29f44bf3415b907da9ce7294abadf8628ba72ba30aec761d615fb53f7d41872b",
+  "culebs/baselines.py": "7a8f5699b3d5752d4d9c0765940d849f5096a2638a3fb7068ba27a63711f6cbd",
+  "culebs/decode.py": "a12de601dccb1bfcdfb777a6cedddd26621f588f57363ab5d05e262cb2e6b8ef",
+  "culebs/diagnostics.py": "f63e246051fd691aeb750c2f83fc24c8d32b5c5532cc4617e53af27c37f77787",
+  "culebs/events.py": "0b8c1257aedef2498a03dfc87ba27efc083f712be3d1cd33e90aa8ea345ba72f",
+  "culebs/features.py": "c1d9fbd4fb61fbf6c630ba8bedf0139144198eb41876dbd7038efeb3ad41a77f",
+  "culebs/models.py": "1c1ed0102fe293a7dbff42c9072a0bed1b3fdfb0909b9e9cfc145cc35acf37ab",
+  "culebs/stoppage.py": "7dd361f0e5e84edd4edb518f4b9eb271ea6ad904b06ff7d3c85925cdff38e937",
+  "culebs/stoppage_pe.py": "dd31a94c8f31eb7a5d20013cb730967e49b4cd710355ea22e678c5f0ca0c619b",
+  "culebs/sprint6.py": "85d7073b3a4a119c6587d5ecd94c9bb17aff581d5ec9c4f920bcbf00f9746ae7",
+  "evaluation/possession_metrics.py": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d",
+  "evaluation/validate_submission.py": "07ac29499acbd337e1dc1de1832d63f6e1fa1d981e22f6ad08212529e2bbee14",
+  "culebs/release.py": "4c2e7c7d5c4c48b2d7dca1b4540ac28aca9646902b91f513c1e8cdccc446a072",
+  "culebs/submission.py": "c44aba6e93926dffbe76b352601f857cb3e12b3908f6254b63a42ad548ca5948",
+  "scripts/make_submission.py": "16edf5bab49d8890d2bed8ccbc3644329947a51cc159cedda10efee5eb75746a",
+  "culebs/learned.py": "ad8e1cc6e237bd7e72a77510115e6d8972067349506e6008ef7839762ef57d35",
+  "culebs/dl/__init__.py": "6b0d68bada59f43d17610c236c0f07275053c6945063cefc4dc29c009699582e",
+  "culebs/dl/decoders13.py": "7f496ca980c23da7365d000036570ecd180d3eaea7a69b61de5a09382c2ae40f",
+  "culebs/dl/features.py": "bc5826094784f4a4bf4129372bcd2ccd5c6f8b37e4bdd5f1f7bf368306bd3054",
+  "culebs/dl/npinfer.py": "f80fc762f68a254e993b11f7a7fed2d53b46f9020fdcef27db4b0144104b0cd8",
+  "culebs/dl/npinfer12.py": "0fa574cec3efbb581627fcf5f8d768c6d057625a3e2e6319416e1ccc5ba68432",
+  "culebs/dead_readout33.py": "749bb54dc69b9c27526a54e3d9993aeebf744b38e1af2c7fdd808388f9ca1bb7",
+  "culebs/rich49.py": "adfe1b732f1758119968199e3d9ea4a378d64ff09193074b4cfc22956d64b691",
+  "culebs/radial49.py": "080dc7924e4bb8a1bfeafd4885300c2ec918a149e1d601776a18c78d5e4ea049",
+  "culebs/joint49.py": "254b07b821ca091bcf7d69d12509178fcfc82f29dc9c536f8dbbc5145caabaed",
+  "culebs/composite49.py": "5dfa13155fbd7f768359400532a929d531b20b9d703628393feb69fa6dff1822",
+  "culebs/dl/npinfer_joint49.py": "fb30ff579e1208d7aa2db04854ac5e52e44aceef214ba163c6466455c5b13e69",
+  "culebs/dl/npinfer_radial49.py": "83f84036e397479f986a851056709a2b54a887137bd4dd9f130f8c934f22a7c5",
+  "culebs/dl/npinfer_rich49.py": "261c5270840ca894481d9876a453718fd9c8970947015a6ea6841a7cc3676981"
+ },
+ "source_refreshes": [
+  {
+   "note": "2026-10-27 Sprint 9: release hardening (final-run gating); frozen output checksums unchanged",
+   "changed": [
+    "culebs/release.py",
+    "scripts/make_submission.py"
+   ]
+  },
+  {
+   "note": "2026-11-01 Sprint 29: learned release method (culebs/learned.py, routed from culebs/release.predict) and role 'release_candidate'; ens6_rescue80 registered; e110a / e108 / e116 output checksums unchanged (verified)",
+   "changed": [
+    "culebs/release.py"
+   ],
+   "added": [
+    "culebs/learned.py",
+    "culebs/dl/__init__.py",
+    "culebs/dl/decoders13.py",
+    "culebs/dl/features.py",
+    "culebs/dl/npinfer.py",
+    "culebs/dl/npinfer12.py"
+   ]
+  },
+  {
+   "note": "2026-11-02 Sprint 34 release preparation: learned_ens6_dead33 method (culebs/learned.py predict_ens6_dead33, routed from culebs/release.predict), Sprint 33 readout module; ens6_dead33 registered as release_candidate; roles unchanged; e110a / e108 / e116 / ens6 output checksums re-verified unchanged",
+   "changed": [
+    "culebs/release.py",
+    "culebs/learned.py"
+   ],
+   "added": [
+    "culebs/dead_readout33.py"
+   ]
+  },
+  {
+   "note": "2026-11-04 Sprint 37 release preparation: learned_x_t1_50 method (culebs/learned.py two_head_labels, predict_x_t1_50, routed from culebs/release.predict); x_t1_50_dead37 registered as release_candidate; roles unchanged. A release_candidate that APPROVALS does not name is now always non-final (independent audit).",
+   "changed": [
+    "culebs/release.py",
+    "culebs/learned.py"
+   ]
+  },
+  {
+   "note": "2026-11-13 Sprint 49 L release preparation: learned_shared49 method (culebs/release.predict routes to culebs/rich49.predict) and the audited NumPy inference modules; shared49_robust_L registered as release_candidate with its expected checksum frozen after the first run (Windows, pinned environment, 13 November 2026); roles unchanged; the output checksums of every other candidate re-verified unchanged. culebs/dl/features.py: docstring of defreeze only (a historical supplied-match aggregate removed; the executable AST is identical, checked by comparing the parsed trees with docstrings masked); the output checksums of the other candidates are re-verified unchanged.",
+   "changed": [
+    "culebs/release.py",
+    "culebs/dl/features.py"
+   ],
+   "added": [
+    "culebs/rich49.py",
+    "culebs/radial49.py",
+    "culebs/joint49.py",
+    "culebs/composite49.py",
+    "culebs/dl/npinfer_joint49.py",
+    "culebs/dl/npinfer_radial49.py",
+    "culebs/dl/npinfer_rich49.py"
+   ]
+  }
+ ],
+ "role_changes": [
+  {
+   "note": "release decision 2026-11-13-shared49_robust_L-v2: shared49_robust_L primary, x_t1_50_dead37, e110a_geometric_conservative_pes_smooth50 fallback (consents recorded in submission/APPROVALS.json)"
+  }
+ ]
+}

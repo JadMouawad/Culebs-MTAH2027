@@ -1,0 +1,93 @@
+{
+ "name": "x_t1_50_dead37",
+ "method": "learned_x_t1_50",
+ "status": "release_candidate only. Leading research candidate; not the primary. Exploratory evidence: second-look protocol, evaluation data with historical research exposure.",
+ "description": "Six TCN checkpoints trained on DFL open data and six SkillCorner development matches with two label heads (research/sprint-37-robust-clean, arm T1, experiments/sprint37_a2_protocol.json). Each checkpoint is exported twice: DFL-head members give the team ratio; x members, whose dead logit is the mean of both heads, give the dead probability. A 56-parameter dead-ball readout is then applied. Decoded with rescue_0.8_25.",
+ "params": {
+  "weights_dir": "submission/models/x_t1_50_dead37",
+  "decoder": "rescue_0.8_25",
+  "team_members": [
+   {
+    "file": "member_0__d.npz",
+    "sha256": "c97f62366c51d11561f4275a045386ad0677019e683b50cebacc4e1109477b44",
+    "kind": "ctrl",
+    "seed": 0
+   },
+   {
+    "file": "member_1__d.npz",
+    "sha256": "e4faab2b87614356d2e2a7262c34c240af86c46145657f2849cff863da36466d",
+    "kind": "ctrl",
+    "seed": 1
+   },
+   {
+    "file": "member_2__d.npz",
+    "sha256": "a3cecde192fad32edbb3c2bfc78cdba4d3a9489392b19913a58a44c5e7b081b2",
+    "kind": "ctrl",
+    "seed": 2
+   },
+   {
+    "file": "member_3__d.npz",
+    "sha256": "84e6c71749032915dbcb495a87b27984ca42857d930f6619b040510e474d2c83",
+    "kind": "abl_ball_state_all",
+    "seed": 0
+   },
+   {
+    "file": "member_4__d.npz",
+    "sha256": "d752108673373291208bf3b260960d525409be674d6dfe0eccc685bc4b777c64",
+    "kind": "abl_ball_state_all",
+    "seed": 1
+   },
+   {
+    "file": "member_5__d.npz",
+    "sha256": "436b189ffacf5f45450cd704e4e09f55856becde72567b4befd41b951cb5ea64",
+    "kind": "abl_ball_state_all",
+    "seed": 2
+   }
+  ],
+  "dead_members": [
+   {
+    "file": "member_0__x.npz",
+    "sha256": "43d36574ae17db03da0a4ecf84e9fb74790aed9c475d62eb5b9928d15df98e6a",
+    "kind": "ctrl",
+    "seed": 0
+   },
+   {
+    "file": "member_1__x.npz",
+    "sha256": "4eb58183ba88361261a969505275a168da9d22d3cd0da520010419f1db0ea7f0",
+    "kind": "ctrl",
+    "seed": 1
+   },
+   {
+    "file": "member_2__x.npz",
+    "sha256": "2dd04858f4025ceefd2d85ee977a2261f0738aa857020ab1dd56e2176b0103ba",
+    "kind": "ctrl",
+    "seed": 2
+   },
+   {
+    "file": "member_3__x.npz",
+    "sha256": "6fa60adc5e82d4da994ae5d0d0aa87e3b4d24e00a4ea83cedbaba9b2a4406607",
+    "kind": "abl_ball_state_all",
+    "seed": 0
+   },
+   {
+    "file": "member_4__x.npz",
+    "sha256": "eeb6c4c64aa17ce6df83d8fa79e57d4f43b1c7a2c083192ffb40f3cdf15dca2a",
+    "kind": "abl_ball_state_all",
+    "seed": 1
+   },
+   {
+    "file": "member_5__x.npz",
+    "sha256": "80b1da74b528aa3137933b007b6dbdc26dbd672bf247abfadfdb3dcf695f7f71",
+    "kind": "abl_ball_state_all",
+    "seed": 2
+   }
+  ],
+  "readout": {
+   "weights_dir": "submission/models/x_t1_50_dead37",
+   "file": "readout_all.npz",
+   "sha256": "406052d75254210c89d40bc2440a3425189a27e96645efcea663c0d73859b258",
+   "params": 56,
+   "logit_cap": 2.0
+  }
+ }
+}

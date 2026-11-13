@@ -1,0 +1,5 @@
+{
+ "team_name": "Culebs",
+ "registered_name_confirmed": true,
+ "note": "Set registered_name_confirmed to true only after checking that 'Culebs' is exactly the team name every member gave in the registration form (SUBMISSION.md). Until then scripts/make_submission.py refuses a final run."
+}

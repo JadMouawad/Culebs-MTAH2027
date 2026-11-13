@@ -1,0 +1,28 @@
+MIT License
+
+Copyright (c) 2026 Team Culebs
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit
+persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---------------------------------------------------------------------------------------------------------------------
+Scope and third-party notices
+
+* Culebs-owned code (everything not listed below): the MIT licence above.
+* Files taken unchanged from the organisers' More Than A Hack 2027 repository: games.py, starter/load_smart_tagging.py, evaluation/possession_metrics.py, evaluation/validate_submission.py.
+  They are under the organisers' MIT licence, Copyright (c) 2026-2027 Metrica Sports, reproduced in
+  LICENSE-ORGANISERS.
+* The competition match data is NOT included and is not covered by any licence here.
+* submission/models/x_t1_50_dead37/*.npz: model weights derived from the DFL / Sportec open data (CC BY 4.0, https://creativecommons.org/licenses/by/4.0/) and the SkillCorner Open Data (MIT); the licence notice and the list of changes are in submission/models/x_t1_50_dead37/ATTRIBUTION.md.
+* submission/models/shared49_L/*.npz: model weights derived from the same DFL / Sportec open data and SkillCorner Open Data; the list of changes is in submission/models/shared49_L/ATTRIBUTION.md.
+  Licence of these 27 weight files, as chosen by the team: Licensed by Team Culebs under Creative Commons Attribution 4.0 International (CC BY 4.0, https://creativecommons.org/licenses/by/4.0/), for the team's own rights in these weight files only. This licence grants no rights in the training data. The weights were derived from DFL / Sportec open position data (CC BY 4.0) and from SkillCorner Open Data (published with an MIT notice at github.com/SkillCorner/opendata, commit 4340d274); attribution, both upstream notices and the list of changes are in the ATTRIBUTION.md file in each weights folder (submission/models/x_t1_50_dead37/ for the thirteen earlier-model files, submission/models/shared49_L/ for the fourteen new ones). Neither DFL / Sportec nor SkillCorner has reviewed, endorsed or specifically authorised these weights. Provided as is, without warranty.

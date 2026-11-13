@@ -1,0 +1,20 @@
+{
+ "id": "e116_e110a_velocity",
+ "method": "geometric_s6",
+ "params": {
+  "features": {},
+  "decode": {
+   "dead_model": "conservative",
+   "smooth_window": 50,
+   "positive_stoppage": true
+  },
+  "s6": {
+   "llr": "velocity",
+   "llr_params": {
+    "away_gain": 0.0
+   }
+  }
+ },
+ "selection_basis": "Sprint 6 candidate on frozen e110a; priors in culebs/sprint6.py fixed before evaluation; evaluated only on previously examined development data (DFL, Metrica, SkillCorner); cannot be promoted in Sprint 6 (experiments/sprint6_selection_rule.json)",
+ "hypothesis": "D2 (corrected): control evidence is set to zero (the ball counts as loose, so the previous team holds) when the ball moves away from the nearest player of BOTH teams (relative speed > 6 m/s). The first D2 design only rescaled the evidence magnitude, which a sign-based majority vote ignores: its output was byte-identical to e110a (logged in experiments/sprint6_log.jsonl)."
+}

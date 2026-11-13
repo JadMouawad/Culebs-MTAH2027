@@ -1,0 +1,167 @@
+{
+ "name": "shared49_robust_L",
+ "method": "learned_shared49",
+ "status": "release_candidate only, prepared for review (Sprint 49 L). Not selected, not approved, not the primary. x_t1_50_dead37 is unchanged and stays registered as the fallback.",
+ "description": "Study L, fixed robust composition. Complete S37 (twelve member exports, 56-parameter dead-ball readout, rescue_0.8_25 decoder) with two added fixed-seed ownership students that share one team-ownership output across the DFL and SkillCorner label heads (their team logits are averaged with S37's), and, where the ball has been unobserved for at least one second, six clean T2 gap specialists. No new learnable parameter at inference; all weights are fixed and hash-checked. Evidence and audit: docs/SPRINT49_L_RELEASE_READINESS.md.",
+ "params": {
+  "base": {
+   "weights_dir": "submission/models/x_t1_50_dead37",
+   "decoder": "rescue_0.8_25",
+   "team_members": [
+    {
+     "file": "member_0__d.npz",
+     "sha256": "c97f62366c51d11561f4275a045386ad0677019e683b50cebacc4e1109477b44",
+     "kind": "ctrl",
+     "seed": 0
+    },
+    {
+     "file": "member_1__d.npz",
+     "sha256": "e4faab2b87614356d2e2a7262c34c240af86c46145657f2849cff863da36466d",
+     "kind": "ctrl",
+     "seed": 1
+    },
+    {
+     "file": "member_2__d.npz",
+     "sha256": "a3cecde192fad32edbb3c2bfc78cdba4d3a9489392b19913a58a44c5e7b081b2",
+     "kind": "ctrl",
+     "seed": 2
+    },
+    {
+     "file": "member_3__d.npz",
+     "sha256": "84e6c71749032915dbcb495a87b27984ca42857d930f6619b040510e474d2c83",
+     "kind": "abl_ball_state_all",
+     "seed": 0
+    },
+    {
+     "file": "member_4__d.npz",
+     "sha256": "d752108673373291208bf3b260960d525409be674d6dfe0eccc685bc4b777c64",
+     "kind": "abl_ball_state_all",
+     "seed": 1
+    },
+    {
+     "file": "member_5__d.npz",
+     "sha256": "436b189ffacf5f45450cd704e4e09f55856becde72567b4befd41b951cb5ea64",
+     "kind": "abl_ball_state_all",
+     "seed": 2
+    }
+   ],
+   "dead_members": [
+    {
+     "file": "member_0__x.npz",
+     "sha256": "43d36574ae17db03da0a4ecf84e9fb74790aed9c475d62eb5b9928d15df98e6a",
+     "kind": "ctrl",
+     "seed": 0
+    },
+    {
+     "file": "member_1__x.npz",
+     "sha256": "4eb58183ba88361261a969505275a168da9d22d3cd0da520010419f1db0ea7f0",
+     "kind": "ctrl",
+     "seed": 1
+    },
+    {
+     "file": "member_2__x.npz",
+     "sha256": "2dd04858f4025ceefd2d85ee977a2261f0738aa857020ab1dd56e2176b0103ba",
+     "kind": "ctrl",
+     "seed": 2
+    },
+    {
+     "file": "member_3__x.npz",
+     "sha256": "6fa60adc5e82d4da994ae5d0d0aa87e3b4d24e00a4ea83cedbaba9b2a4406607",
+     "kind": "abl_ball_state_all",
+     "seed": 0
+    },
+    {
+     "file": "member_4__x.npz",
+     "sha256": "eeb6c4c64aa17ce6df83d8fa79e57d4f43b1c7a2c083192ffb40f3cdf15dca2a",
+     "kind": "abl_ball_state_all",
+     "seed": 1
+    },
+    {
+     "file": "member_5__x.npz",
+     "sha256": "80b1da74b528aa3137933b007b6dbdc26dbd672bf247abfadfdb3dcf695f7f71",
+     "kind": "abl_ball_state_all",
+     "seed": 2
+    }
+   ],
+   "readout": {
+    "weights_dir": "submission/models/x_t1_50_dead37",
+    "file": "readout_all.npz",
+    "sha256": "406052d75254210c89d40bc2440a3425189a27e96645efcea663c0d73859b258",
+    "params": 56,
+    "logit_cap": 2.0
+   }
+  },
+  "students": {
+   "weights_dir": "submission/models/shared49_L",
+   "shared_team": true,
+   "members": [
+    {
+     "file": "SHARED_s0_all.npz",
+     "sha256": "8ea1ef3d817899aa45f31c593b8f3273c9578e59817d21d82d11b5d2568444ed",
+     "seed": 0
+    },
+    {
+     "file": "SHARED_s1_all.npz",
+     "sha256": "7a54a38fcec24785f3a5e6c8da873d300b99e816ee45ffd8c097386fb7d272ed",
+     "seed": 1
+    }
+   ]
+  },
+  "specialist": {
+   "weights_dir": "submission/models/shared49_L",
+   "team_members": [
+    {
+     "file": "member_0__d.npz",
+     "sha256": "e7a9dcf51f8e7e59c8c50bc1f290103be86f74d57a463421c026b853b8295f08"
+    },
+    {
+     "file": "member_1__d.npz",
+     "sha256": "f985c176907b8909dc7f636c12204970d785ca37a7623b7b746faee5c9daaefa"
+    },
+    {
+     "file": "member_2__d.npz",
+     "sha256": "db1d789c47e564f444e20af873890fe62c909ef420644498a9de8acade04513b"
+    },
+    {
+     "file": "member_3__d.npz",
+     "sha256": "952bdd2a8cc051a614bec0a6fecc42a5b0ebda4e8eb89eff386c9b45af9db8af"
+    },
+    {
+     "file": "member_4__d.npz",
+     "sha256": "7a25e7d3d3c97e3bb58f375b93bfcac3dcd9b551d19180fd7136f7a39a610f7b"
+    },
+    {
+     "file": "member_5__d.npz",
+     "sha256": "b90bf911c6d4e4766bce1a92d8dcc60ffe194d782a27dfc6cd8861d44fc4c2a0"
+    }
+   ],
+   "dead_members": [
+    {
+     "file": "member_0__x.npz",
+     "sha256": "fc3cb85232c45e0aa11320fe0fd167e9e0cde17e4bd5ff1086fa6b4c72211b93"
+    },
+    {
+     "file": "member_1__x.npz",
+     "sha256": "cc421c94245f256434f6089f474e7c66a6e03786f0dc89c9828010ce4503b2d7"
+    },
+    {
+     "file": "member_2__x.npz",
+     "sha256": "f88fd5d1f182ba290fe2a75d1b65ce93b8a497b8be7b74bd0348cf67df2e2452"
+    },
+    {
+     "file": "member_3__x.npz",
+     "sha256": "75d66222fbf832f68bd6ab234113d51c4f26e78155fbf424c29214847bfbbe53"
+    },
+    {
+     "file": "member_4__x.npz",
+     "sha256": "74881c072bc5667ba0d9471edc4084318b237f4c04cd24cdfc92ca06c3536917"
+    },
+    {
+     "file": "member_5__x.npz",
+     "sha256": "2c99810e3f4a58fe08da5d086c11088cde345e287e7b42873a960674a9a431cd"
+    }
+   ]
+  }
+ },
+ "research_exports_sha256": "5d2a3efabfbf277cfe6ada3e4793282cf878782cc2b21e4a0407afe0e2d31ddd"
+}

@@ -1,0 +1,6 @@
+# The competition data is licensed for the competition only: never commit it.
+data/
+outputs/
+*.csv
+__pycache__/
+.venv/

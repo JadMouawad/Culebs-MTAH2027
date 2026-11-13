@@ -1,0 +1,61 @@
+{
+ "name": "ens6_dead33",
+ "method": "learned_ens6_dead33",
+ "description": "ens6_rescue80 (six DFL-trained TCN members, unchanged) plus the Sprint 33 PFF-free dead-ball readout: dead log-odds = ens6 dead log-odds + 2 tanh(w.x + b) on 55 label-free tracking / ens6 features; ens6's home/away ratio kept; decoded with rescue_0.8_25. Readout trained only on DFL open data (CC BY 4.0) and SkillCorner open data (MIT); see submission/models/ens6_dead33/ATTRIBUTION.md.",
+ "params": {
+  "weights_dir": "submission/models/ens6_rescue80",
+  "decoder": "rescue_0.8_25",
+  "members": [
+   {
+    "file": "member_0.npz",
+    "sha256": "ec70f60acdf28898df6a57bab26aec639ba49b050a5e72721ea6c27b9204b233",
+    "params": 127362,
+    "source_checkpoint": "outputs/sprint11/ckpt/s11_ctrl_s0.pt",
+    "source_sha256": "3d2d822b115656cbb03ca00462abad7ddb11e3c5db167a64e06a2aaced2c1afc"
+   },
+   {
+    "file": "member_1.npz",
+    "sha256": "38554550ad9147ad75e7ab59df9f062b579c501c4b2317c9b01d6625e7f75752",
+    "params": 127362,
+    "source_checkpoint": "outputs/sprint11/ckpt/s11_ctrl_s1.pt",
+    "source_sha256": "1cde576a76fe796d3707236eaf1c8d2173c0af7ccebb4539cc7afd43df36beb4"
+   },
+   {
+    "file": "member_2.npz",
+    "sha256": "85ceaf10d48fe9e86391a569f294ca72810d643f20f56fdcc878468409d20149",
+    "params": 127362,
+    "source_checkpoint": "outputs/sprint11/ckpt/s11_ctrl_s2.pt",
+    "source_sha256": "c6e09f1296969ffa080bb02ddf961731031c264ba9f6990dfcf264966f15b6cb"
+   },
+   {
+    "file": "member_3.npz",
+    "sha256": "eb6122454f07415c2afb52bcf8bbd682e110cf60bc83122a5074b87b2578b251",
+    "params": 127362,
+    "source_checkpoint": "outputs/sprint11/ckpt/s11_abl_ball_state_all_s0.pt",
+    "source_sha256": "060b8ab79e87ded349e6046d79190c08da8141c6d08703cfa73cf97c9ff6cc83"
+   },
+   {
+    "file": "member_4.npz",
+    "sha256": "3237dd3df63e878465237af103a9bad8bdc96938b1c7c2e4b8cf0644d8795db7",
+    "params": 127362,
+    "source_checkpoint": "outputs/sprint11/ckpt/s11_abl_ball_state_all_s1.pt",
+    "source_sha256": "8113a648293ff8a39e94eeec0f4a542b31bc7fd5ad78b471aa8d4482a1ebeaf6"
+   },
+   {
+    "file": "member_5.npz",
+    "sha256": "e82e479ba1e1a9a63f03d4bbed70aa3f9d6e34c28a22bf87c05540a6022b7819",
+    "params": 127362,
+    "source_checkpoint": "outputs/sprint11/ckpt/s11_abl_ball_state_all_s2.pt",
+    "source_sha256": "6edba3e344622819d90f70a70aa3cd800247ca3ff4a729410274d8c98a84dba0"
+   }
+  ],
+  "readout": {
+   "weights_dir": "submission/models/ens6_dead33",
+   "file": "readout_all.npz",
+   "sha256": "a47ff7999e7ae2f6452cb1ba519684de6f9aaa2d21cc233f5d7b56d5bf3ef140",
+   "params": 56,
+   "logit_cap": 2.0,
+   "source": "culebs-mtah2027 research/sprint-33-control-and-spellf1 scripts/sprint33_spellf1.py a, fold 'all' (deterministic refit verified)"
+  }
+ }
+}

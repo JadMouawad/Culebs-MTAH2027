@@ -1,0 +1,7 @@
+{
+  "id": "e108_geometric_conservative_smooth50",
+  "method": "geometric_smooth",
+  "params": {"features": {}, "decode": {"dead_model": "conservative", "smooth_window": 50}},
+  "selection_basis": "a priori: physical and football priors in culebs DEFAULTS; dead_model conservative and the majority-vote window 50 were both specified before evaluation; the variant was pre-registered in scripts/external_benchmark.py before its results on Metrica sample games 1-3 (other matches) were seen; nothing chosen on the competition match",
+  "hypothesis": "Majority vote over geometric control with positive-evidence-only dead ball: invents few stoppages inside live play, so possessions are not split; best on other matches in every dropout scenario (Sprint 3)."
+}

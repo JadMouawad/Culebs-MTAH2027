@@ -1,0 +1,14 @@
+# Exact environment used for the Team Culebs runs: Python 3.11.9 (Windows, .venv). Install with
+#   python -m pip install -r requirements-lock.txt
+# The scorer itself needs only numpy + pandas (requirements.txt); pytest is for tests/.
+colorama==0.4.6
+iniconfig==2.3.1
+numpy==2.4.6
+packaging==26.3
+pandas==3.1.0
+pluggy==1.7.0
+Pygments==2.21.0
+pytest==9.1.1
+python-dateutil==3.0.0
+six==1.17.0
+tzdata==2026.5

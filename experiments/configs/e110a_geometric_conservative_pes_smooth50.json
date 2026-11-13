@@ -1,0 +1,7 @@
+{
+  "id": "e110a_geometric_conservative_pes_smooth50",
+  "method": "geometric_smooth",
+  "params": {"features": {}, "decode": {"dead_model": "conservative", "smooth_window": 50, "positive_stoppage": true}},
+  "selection_basis": "a priori: physical thresholds in culebs/stoppage_pe.py DEFAULTS; the design was revised twice (interval drop when play resumes; sustained observed crossing) on Metrica sample games 1-2, which are DEVELOPMENT matches; frozen before the sealed DFL holdout; nothing chosen on the competition match",
+  "hypothesis": "e108 plus multi-signal positive-evidence stoppages (crossing, placement, confirmed onset, motion as support): higher dead-ball recall without splitting possessions. Externally testable (no Smart Tagging needed)."
+}
