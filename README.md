@@ -17,7 +17,10 @@ set MTAH_DATA_DIR=<folder with the competition data bundle>   # Linux / macOS: e
 - Output: `outputs/submission/Culebs.csv` (199,319 rows), plus `Culebs.manifest.json` with every input and code hash.
 - Expected sha256: `7839169700c0cc0060dc6168ea5e414f486fbdfd615c025f379c519649529838`. The script refuses to write a file whose bytes differ.
 - The previous model, without the added ownership and gap networks, is `--candidate x_t1_50_dead37` (sha256 `d707e942b4a1a45c038e792b19e69e363373ba1132a3159539cd1c093edb74a1`); it needs the same files.
-- Requirements: numpy and pandas only (pinned in `requirements-lock.txt`), CPU, no GPU.
+- Input: `MTAH_DATA_DIR` must contain these two files (the organisers' tactical tracking, unmodified):
+  - `tactical/BAR-ATH_tactical_atd.txt`
+  - `tactical/BAR-ATH_tactical_atd.xml`
+- Requirements: numpy and pandas only (pinned in `requirements-lock.txt`), CPU, no GPU. Inference takes approximately 3 minutes on the machine where we verified it (165.8 s).
 - Only the weights of these two candidates are in this repository; other registered candidates cannot be regenerated from it, except the rule-based ones.
 
 **Checking the reproduction.** The output line `OK ... sha256 <value> ... frozen match True` is the check: the file is byte-identical to the

@@ -50,6 +50,7 @@ The interval is a 90 % bootstrap over matches. The smallest single-match gain is
   | extra ball loss 40 % | 0.555 → 0.613 | 0.625 → 0.669 | 0.539 → 0.601 |
 
   The earlier model's main known weakness, heavy live ball loss, is reduced here by the specialists but not removed. It is tested only with synthetic loss; the loss on the provided match cannot be sized without using the match.
+
 - **Changes considered and rejected.** Re-selecting the decoder gained on DFL and Metrica and lost on 13 of the 14 SkillCorner test matches, so `rescue_0.8_25` was kept. Combining with the earlier S33 model's probabilities added nothing on natural tracking and was not used.
 
 ## 3. Assets used and dropped
@@ -117,8 +118,10 @@ Three separate things carry separate terms.
 
 1. **Our code:** MIT (`LICENSE`). Files taken unchanged from the organisers (`games.py`, `starter/load_smart_tagging.py`, `evaluation/`) keep their MIT licence (`LICENSE-ORGANISERS`, Metrica Sports).
 2. **The training data** is not redistributed. It keeps its own terms:
-   - **DFL / Sportec open data:** CC BY 4.0. Bassek, Rein, Weber & Memmert (2025), *An integrated dataset of spatiotemporal and event data in elite soccer*, *Scientific Data* 12, doi:10.1038/s41597-025-04505-y. (c) DFL / Sportec Solutions. The changes made are listed in the `ATTRIBUTION.md` files.
-   - **SkillCorner Open Data** (github.com/SkillCorner/opendata, commit `4340d274`): credit SkillCorner. The repository's MIT notice is reproduced in full in `submission/models/x_t1_50_dead37/ATTRIBUTION.md`. That notice speaks of software, so the team interprets the permission to train on the data and publish derived weights as reasonably clear. **It is not explicitly confirmed**: we did not obtain SkillCorner's separate permission for derived weights (`docs/SPRINT37_SKILLCORNER_LICENCE.md`).
+
+    - **DFL / Sportec open data:** CC BY 4.0. Bassek, Rein, Weber & Memmert (2025), *An integrated dataset of spatiotemporal and event data in elite soccer*, *Scientific Data* 12, doi:10.1038/s41597-025-04505-y. (c) DFL / Sportec Solutions. The changes made are listed in the `ATTRIBUTION.md` files.
+    - **SkillCorner Open Data** (github.com/SkillCorner/opendata, commit `4340d274`): credit SkillCorner. The repository's MIT notice is reproduced in full in `submission/models/x_t1_50_dead37/ATTRIBUTION.md`. That notice speaks of software, so the team interprets the permission to train on the data and publish derived weights as reasonably clear. **It is not explicitly confirmed**: we did not obtain SkillCorner's separate permission for derived weights (`docs/SPRINT37_SKILLCORNER_LICENCE.md`).
+
 3. **The twenty-seven weight files** carry the licence the team states for them in `LICENSE`, subject to the upstream notices above. The upstream licences do not by themselves set a licence for the weights.
 
 The competition match data is not included and is not covered by any licence here.
